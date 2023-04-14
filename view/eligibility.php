@@ -5,6 +5,7 @@
 <html>
 <script src="https://kit.fontawesome.com/a676914d6c.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="includes/eligibility.js"></script>
 
 
 
@@ -29,6 +30,33 @@
 					background-color: green;
 					
 					}
+
+
+
+		/* style for eligibility check			 */
+h1 {
+	text-align: center;
+}
+
+select, button {
+	display: block;
+	margin: 20px auto;
+}
+
+#question-container {
+	display: none;
+	width: 40%;
+	margin:0 auto;
+}
+
+#question-container2 {
+	display: none;
+	width: 40%;
+	margin:0 auto;
+}
+
+
+
 
 
 
@@ -223,7 +251,169 @@
 
 	<div class="container" style="padding-top:60px">
 
-                <h2>Check eligibility </h2>
+	<h1>Profession Eligibility Test</h1>
+	<select id="profession">
+		<option value="none">Select a profession</option>
+		<option value="web developer">Web Developer</option>
+		<option value="graphic designer">Graphic Designer</option>
+
+	</select>
+	<br>
+	<button id="check-eligibility" onclick="checkEligibility()">Check Eligibility</button>
+
+
+
+
+     <!-- question container -->
+	<div id="question-container">
+				<h4>Year of experience as a web developer?</h4>
+				<form>
+				<input type="radio" name="experience" value="0"> Fresh Graduate<br>
+				<input type="radio" name="experience" value="1"> One year<br>
+				<input type="radio" name="experience" value="2"> One--Three Year<br>
+				<input type="radio" name="experience" value="3"> More than three year<br><br>
+				
+				</form>
+
+
+
+				<h4>Select frontend technology stack you know?</h4>
+				<form>
+				<input type="radio" name="frontend" value="0"> None<br>
+				<input type="radio" name="frontend" value="1"> HTML CSS<br>
+				<input type="radio" name="frontend" value="2"> HTML CSS Javascript<br>
+				<input type="radio" name="frontend" value="3"> HTML CSS JS JQuery<br>
+				<input type="radio" name="frontend" value="4"> HTML CSS JS JQuery REACT/VUE/Angular <br><br>
+
+				</form>
+
+
+
+				<h4>Select backend technology stack you know?</h4>
+				<form>
+				<input type="radio" name="backend" value="0"> None<br>
+				<input type="radio" name="backend" value="1"> PHP<br>
+				<input type="radio" name="backend" value="2"> Familiar with one framework (Laravel,Django,Express js etc)<br>
+				<input type="radio" name="backend" value="3"> Familiar with more than one framework<br>
+			
+
+				</form>
+
+
+				<h4>Select Database you know?</h4>
+				<form>
+				<input type="radio" name="database" value="0"> None<br>
+				<input type="radio" name="database" value="1"> Relational(MYSQL)<br>
+				<input type="radio" name="database" value="2"> Non Relational (MongoDB)<br>
+				<input type="radio" name="database" value="3"> Both Relational & Non Relational<br>
+			
+
+				</form>
+
+
+				
+				<h4>Select Version Control System you know?</h4>
+				<form>
+				<input type="radio" name="version" value="0"> None<br>
+				<input type="radio" name="version" value="1"> Git & Github<br>
+				<input type="radio" name="version" value="2"> Github and others<br>
+				
+			
+
+				</form>
+				
+				<button type="button" onclick="calculatePoints()">Calculate</button>
+                <br><br>
+				<p id="points" style="text-align: center;"></p>
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div id="question-container2">
+		<h4>Year of experience as a Graphic designer ?</h4>
+		<form>
+		<input type="radio" name="experience" value="0"> Fresh Graduate<br>
+		<input type="radio" name="experience" value="1"> One year<br>
+		<input type="radio" name="experience" value="2"> One--Three Year<br>
+		<input type="radio" name="experience" value="3"> More than three year<br><br>
+		
+		</form>
+
+
+
+		<h4>Do you know about color theory and design principle?</h4>
+		<form>
+		<input type="radio" name="theory" value="0"> No<br>
+		<input type="radio" name="theory" value="1"> Yes<br>
+		
+
+		</form>
+
+
+
+		<h4>Select design tool you know?</h4>
+		<form>
+		<input type="radio" name="tool" value="0"> None<br>
+		<input type="radio" name="tool" value="1"> Adobe illustrator<br>
+		<input type="radio" name="tool" value="2"> Adobe photoshop<br>
+		<input type="radio" name="tool" value="3"> Both illustrator & photoshop<br>
+	
+
+		</form>
+
+
+		<h4>Familiar with UI/UX design?</h4>
+		<form>
+		<input type="radio" name="ui" value="0"> No<br>
+		<input type="radio" name="ui" value="1"> Yes<br>
+	
+	
+
+		</form>
+
+
+		
+		<h4>familiar with video editing and animation know?</h4>
+		<form>
+		<input type="radio" name="video" value="0"> No<br>
+		<input type="radio" name="video" value="1"> Yes<br>
+		
+		
+	
+
+		</form>
+		
+		<button type="button" onclick="calculatePoints2()">Calculate</button>
+		<br><br>
+		<p id="points2" style="text-align: center;"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
                                     
 
 				
@@ -233,9 +423,18 @@
 
 
 
+			</div>
 
+    <br><br><br>
+  
+	<footer style="border-top: 1px solid orange; border-right: none; border-bottom: none; border-left: none;text-align: center;color:gray;font-size:12px;">
+    <p style="margin: 0; padding: 5px;font-size:14px">Powered by <b>Career Assistant Team</b></p>
+    <p style="margin: 0; padding: 5px;font-size:14px">Copyright © 2023 - 2023 Career Assistant Ltd. All rights reserved.</p>
+	<br><br>
 
-
+	
+    
+    </footer>
 
 
 
