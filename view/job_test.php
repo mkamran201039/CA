@@ -2,6 +2,34 @@
 <html>
 <head>
 	<title>Job Post</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f7f7f7;
+			padding: 20px;
+		}
+		.job-post {
+			background-color: #fff;
+			padding: 20px;
+			margin-bottom: 20px;
+			border-radius: 5px;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		}
+		.job-title {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		.job-meta {
+			font-size: 14px;
+			color: #666;
+			margin-bottom: 10px;
+		}
+		.job-description {
+			font-size: 16px;
+			line-height: 1.5;
+		}
+	</style>
 </head>
 <body>
 
