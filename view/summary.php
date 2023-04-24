@@ -1,9 +1,16 @@
 
 
 
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <script src="https://kit.fontawesome.com/a676914d6c.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 
@@ -221,9 +228,46 @@
 
 
 
-	<div class="container" style="padding-top:60px">
+	<div class="container" style="padding-top:60px;margin-left:27%">
 
-                <h2>Summary </h2>
+                
+
+
+
+
+
+
+				<canvas id="myChart" style="width:100%;max-width:600px">here</canvas>
+
+				<script>
+				
+				var xValues = [">=3.5", "3.0--3.49", "2.5--2.99", "2.0--2.49", "<2"];
+				var yValues = [<?php echo $a; ?>, <?php echo $b; ?>, <?php echo $c; ?>, <?php echo $d; ?>, <?php echo $e; ?>];
+				var barColors = [
+				"#b91d47",
+				"#00aba9",
+				"#2b5797",
+				"#e8c3b9",
+				"#1e7145"
+				];
+
+				new Chart("myChart", {
+				type: "pie",
+				data: {
+					labels: xValues,
+					datasets: [{
+					backgroundColor: barColors,
+					data: yValues
+					}]
+				},
+				options: {
+					title: {
+					display: true,
+					text: "CGPA Chart of our Alumni"
+					}
+				}
+				});
+				</script>
                                     
 
 				
