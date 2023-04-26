@@ -6,7 +6,20 @@
 <link rel="stylesheet" type="text/css" href="includes/job_style.css">
 
 
+
+<script>
+   function showMessage() {
+              alert("Feedback sent successfully");
+     }
+
+</script>
+
+
+<head>
+	<title>Your Job Post</title>
+
 </head>
+
 
 <body>
 	<header class="header">
@@ -54,11 +67,6 @@
 
      <!-- header part end here -->
 
-
-
-
-
-
 	<div class="container" style="padding-top:60px;">
 
 	<div class="container_p">
@@ -75,7 +83,39 @@
 				
 			</div>
 		</div>
-		
+		<div class="right-box" >
+                        <?php            
+                        // Connect to MySQL database
+                        include '../model/connect.php';
+                        // include 'connect.php';
+
+                        // Query database for job posts
+                        $poster_name=$_SESSION['name'].' '.$_SESSION['id'];
+                        $sql = "SELECT * FROM job where poster_name='$poster_name'";
+                        $result = $conn->query($sql);
+                        echo '<h1 style="text-align:center;">Jobs</h1><p style="text-align:center;font-size:12px">All job offered by you</p><br>';
+                        
+                        // Loop through job posts and display as HTML
+                        if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) {
+                                echo '<div class="job-post">';
+                                echo '<div class="job-title">' . $row["title"] . '</div>';
+                                echo '<div class="job-meta">' . $row["poster_name"] . ' | ' . $row["time"] . '</div>';
+                                echo '<div class="job-description">' . $row["description"] . '</div><br>';
+                                echo ' <div class="like-dislike">
+                                
+                                <button class="btn btn-danger"><a href="../controller/delete_job.php?deleteid='.$row["id"].'" style="color:white;text-decoration:none">Delete</a></button>
+                            </div>';
+                            echo '</div>';
+                            }
+                        } else {
+                            echo "No job posts found.";
+                        }
+
+                        $conn->close();
+                        ?>
+
+		</div>
 	</div>
                                     
     			
@@ -92,16 +132,6 @@
 	
     
     </footer>
-
-
-
-
-
-
-
-
-
-
 
 
 	</html>
