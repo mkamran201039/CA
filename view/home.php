@@ -310,6 +310,7 @@
 
 
 
+<p style="font-size:13px;text-align:center">New to this platform? <a href="https://mkamran201039.github.io/mkdocs_career_assistant/" target="_blank" style="text-decoration:none">see documentation</a></p>
 
 				
     
@@ -321,6 +322,16 @@
 
 
 
+    <br><br><br>
+  
+	<footer style="border-top: 1px solid orange; border-right: none; border-bottom: none; border-left: none;text-align: center;color:gray;font-size:12px;">
+    <p style="margin: 0; padding: 5px;font-size:14px">Powered by <b>Career Assistant Team</b></p>
+    <p style="margin: 0; padding: 5px;font-size:14px">Copyright © 2023 - 2023 Career Assistant Ltd. All rights reserved.</p>
+	<br><br>
+
+	
+    
+    </footer>
 
 
 
