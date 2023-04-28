@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html>
 <script src="https://kit.fontawesome.com/a676914d6c.js" crossorigin="anonymous"></script>
@@ -17,8 +20,181 @@
 
 <head>
 	<title>Your Job Post</title>
+	<style>        
+          
+					.profile-img {
+					width: 120px;
+					height: 120px;
+					border-radius: 50%;
+					background-image: url('images/<?php  session_start(); echo $_SESSION['id']?>.png');
+					background-size: cover;
+					background-position: center;
+					margin-bottom: 80px;
+}
+
+
+
+             /* style for button */
+	              body{
+						background-color:#f8f9fa;
+						font-size:15px;
+					}
+
+                    button{
+					background-color: #4CAF50;
+					color: white;
+					border: none;
+					padding: 5px 10px;
+					font-size: 16px;
+					cursor: pointer;
+					border-radius:5px;
+					}
+
+					button:hover {
+					background-color: green;
+					
+					}
+
+
+
+ 
+
+
+		/* Style for the header */
+		
+		.header {
+			position: fixed;
+			top: 0;
+			left: 5%;
+			width: 90%;
+			margin: auto;
+			background-color: #fb980a;
+			color: #fff;
+			padding: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			z-index: 999;
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+
+		/* Style for the logo */
+		.logo {
+			font-size: 24px;
+			font-weight: bold;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+		}
+
+		/* Style for the menu */
+		.menu {
+			display: flex;
+			align-items: center;
+
+		}
+
+		.menu a {
+			color: #333;
+			margin: 0 10px;
+			text-decoration: none;
+			font-weight: bold;
+			transition: all 0.3s ease-in-out;
+			position: relative;
+			letter-spacing: 20px;
+			text-align: center;
+		}
+
+    .menu a:hover{
+       
+    }
+
+		.menu a::before {
+			content: "";
+			position: absolute;
+			bottom: -5px;
+			left: 0;
+			height: 2px;
+			width: 100%;
+			background-color: #333;
+			transform: scaleX(0);
+			transform-origin: left;
+			transition: all 0.3s ease-in-out;
+		}
+
+		.menu a:hover::before {
+			transform: scaleX(0.6);
+			background-color: white;
+     
+		}
+
+		/* Style for the profile */
+		.profile {
+			display: flex;
+			align-items: center;
+		}
+
+		.profile img {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			margin-right: 10px;
+		}
+
+
+		.logout-btn {
+			background-color: red;
+			color: #fff;
+			padding: 5px 10px;
+			border-radius: 5px;
+			text-decoration: none;
+			margin-left: 10px;
+			font-size: 14px;
+		}
+
+		.logout-btn:hover {
+			background-color: #ff5733;
+			color: #fff;
+			padding: 5px 10px;
+			border-radius: 5px;
+			text-decoration: none;
+			margin-left: 10px;
+			font-size: 14px;
+		}
+
+		/* Style for the container */
+		.container {
+			width: 90%;
+			margin: 100px auto;
+			font-size: 20px;
+			line-height: 1.5;
+            background-color:#f8f9fa;
+			height:auto;
+			
+		}
+	</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </head>
+
+
+
+
+
+
+
 
 
 <body>
@@ -67,6 +243,11 @@
 
      <!-- header part end here -->
 
+
+
+
+
+
 	<div class="container" style="padding-top:60px;">
 
 	<div class="container_p">
@@ -114,6 +295,9 @@
 
                         $conn->close();
                         ?>
+      
+
+
 
 		</div>
 	</div>
@@ -132,6 +316,16 @@
 	
     
     </footer>
+
+
+
+
+
+
+
+
+
+
 
 
 	</html>
